@@ -13,5 +13,6 @@ namespace BlogSite.Domain
         public Guid Id { get; set; }
         [Required]
         public string CommentBody { get; set; }
+        public DateTime CommentTime { get; set; }
     }
 }
