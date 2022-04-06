@@ -18,6 +18,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\BlogSite.Data\BlogSite.Data.csproj" />
     <ProjectReference Include="..\BlogSite.Domain\BlogSite.Domain.csproj" />
   </ItemGroup>
 
