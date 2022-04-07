@@ -1,0 +1,25 @@
+﻿@{
+    ViewData["Title"] = "Add Post Page";
+    Layout = "_Layout";
+}
+@model AddPostViewModel
+<div >
+    <form asp-controller="post" asp-action="add" method="post">
+        <div class="input-group mb-3">
+          <label asp-for="Title">Title</label>
+          <input asp-for="Title" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" placeholder="Enter Title...">
+        </div>
+        <div class="input-group">
+          <label asp-for="Description">Description</label>
+          <textarea asp-for="Description" class="form-control" aria-label="With textarea"></textarea>
+        </div>
+        <div class="input-group mb-3">
+          <label asp-for="Image" class="input-group-text" for="inputGroupFile01">Image</label>
+          <input asp-for="Image" type="file" accept="image/*" class="form-control" id="inputGroupFile01">
+        </div>
+        <div>
+            <input asp-for="CreatTime" type="hidden"/>
+        </div>
+        <a style="width:50px;" asp-controller="post" asp-action="add" class="btn btn-primary">Add Post</a>
+    </form>
+</div>

@@ -18,7 +18,14 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\BlogSit.ViewModel\BlogSite.ViewModel.csproj" />
+    <ProjectReference Include="..\BlogSite.BL\BlogSite.BL.csproj" />
     <ProjectReference Include="..\BlogSite.Data\BlogSite.Data.csproj" />
+    <ProjectReference Include="..\BlogSite.Domain\BlogSite.Domain.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\Images\" />
   </ItemGroup>
 
 </Project>

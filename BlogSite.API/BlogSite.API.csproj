@@ -19,10 +19,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\" />
-  </ItemGroup>
-
-  <ItemGroup>
+    <ProjectReference Include="..\BlogSite.BL\BlogSite.BL.csproj" />
     <ProjectReference Include="..\BlogSite.Data\BlogSite.Data.csproj" />
   </ItemGroup>
 

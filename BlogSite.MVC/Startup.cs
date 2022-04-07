@@ -1,4 +1,7 @@
+using BlogSite.BL.Interface;
+using BlogSite.BL.Repasitory;
 using BlogSite.Data.DataLayer;
+using BlogSite.MVC.Service;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -25,8 +28,14 @@ namespace BlogSite.MVC
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddScoped<IFileInterface, FileRepasitory>();
+            services.AddScoped<ICommentInterface, CommentRepasitory>();
+
+            services.AddScoped<IPostInterface, PostRepasitory>();
+
             services.AddDbContext<AppDbContext>(option =>
              option.UseNpgsql(Configuration.GetConnectionString("PostgreDB")));
+
             services.AddControllersWithViews();
         }
 

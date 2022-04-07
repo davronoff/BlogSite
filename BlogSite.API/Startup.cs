@@ -1,3 +1,5 @@
+using BlogSite.BL.Interface;
+using BlogSite.BL.Repasitory;
 using BlogSite.Data.DataLayer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -21,9 +23,15 @@ namespace BlogSite.API
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddScoped<ICommentInterface, CommentRepasitory>();
+
+            services.AddScoped<IPostInterface, PostRepasitory>();
+
             services.AddDbContext<AppDbContext>(option =>
              option.UseNpgsql(Configuration.GetConnectionString("PostgreDB")));
+
             services.AddControllers();
+
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "BlogSite.API", Version = "v1" });
